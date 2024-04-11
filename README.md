@@ -1,6 +1,6 @@
 # Eagle
 Student grades manager.
-Contribuitors:
+# Contribuitors:
 - Angelo Ibañez
 - Brayan Sierra
 - Jhonatan Puentes
