@@ -2,13 +2,13 @@
 #define DLNODE_H
 
 template<typename T>
-struct Node {
+struct DLNode {
 	T value;
-	Node<T> *next, *previous;
-	Node() {}
-	Node(T v) : value(v) {}
-	Node(Node<T> *n, T v) : next(n), value(v) {}
-  Node(Node<T> *n, Node<T> *p, T v) : next(n), previous(p), value(v) {}
+	DLNode<T> *next, *previous;
+	DLNode() {}
+	DLNode(T v) : value(v) {}
+	DLNode(DLNode<T> *n, T v) : next(n), value(v) {}
+  DLNode(DLNode<T> *n, DLNode<T> *p, T v) : next(n), previous(p), value(v) {}
 };
 
 #endif

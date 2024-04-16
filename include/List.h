@@ -21,16 +21,16 @@ public:
     size = 0;
   }
 
-//	~List() {
-//		Node<T> *aux;
-//		for (int i = 0; i < size+2; i++) {
-//			aux = head->next;
-//			delete head;
-//			head = aux;
-//		}
-//		delete aux;
-//		delete head;
-//	}
+	~List() {
+		Node<T> *aux;
+		for (int i = 0; i < size+2; i++) {
+			aux = head->next;
+			delete head;
+			head = aux;
+		}
+		delete aux;
+		delete head;
+	}
 
   bool validIndex(int index) {
   	return -1 < index && index < size;
