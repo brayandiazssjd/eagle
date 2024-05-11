@@ -1,0 +1,4 @@
+Para los nombre:
+- CamelCase
+- No abreviaturas amenos que sea muy largo
+- 
