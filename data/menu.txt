@@ -1,0 +1,16 @@
+Menú Principal
+1. Consultar
+2. Editar
+3. Guardar
+
+Sub menú 1
+1.1 Estudiante
+1.2 Profesor
+1.3 Tema
+
+Sub menú 2
+2.1 Calificación
+2.2 
+
+Sub menú 3
+3.1 

@@ -6,8 +6,11 @@
 #include <stdexcept>
 
 template <typename T> class List {
+private:
   Node<T> *head, *tail;
   int size;
+
+  bool validIndex(int index) { return -1 < index && index < size; }
 
 public:
   List() {
@@ -19,21 +22,27 @@ public:
 
   ~List() {
     Node<T> *aux;
-    for (int i = 0; i < size + 2; i++) {
+    for (int i = 0; i < size; i++) {
       aux = head->next;
-      delete head;
-      head = aux;
+      head->next = aux->next;
+      delete aux;
     }
-    delete aux;
+    delete tail;
     delete head;
-  }
-
-  bool validIndex(int index) { return -1 < index && index < size; }
+  }  
 
   void add(T e) {
     tail->value = e;
     tail->next = new Node<T>();
     tail = tail->next;
+    size++;
+  }
+
+  void addFirst(T e) {
+    Node<T> *temp = new Node<T>();
+    temp->next = head->next;
+    temp->value = e;
+    head->next = temp;
     size++;
   }
 
@@ -51,14 +60,6 @@ public:
     size++;
   }
 
-  void addFirst(T e) {
-    Node<T> *temp = new Node<T>();
-    temp->next = head->next;
-    temp->value = e;
-    head->next = temp;
-    size++;
-  }
-
   void remove(int index) {
     if (!validIndex())
       throw std::out_of_range("Index out of bounds");
@@ -66,11 +67,13 @@ public:
     for (int i = 0; i < index; ++i) {
       aux = aux->next;
     }
-    Node<T> temp = aux->next->next;
-    aux->next = temp;
+    Node<T> temp = aux->next;
+    aux->next = temp->next;
     delete temp;
   }
 
+
+  // Removes the element that matches with 'e'.
   void remove(T e) {
     if (!validIndex())
       throw std::out_of_range("Index out of bounds");
@@ -78,12 +81,12 @@ public:
     for (int i = 0; i < size; ++i) {
       aux = aux->next;
 			if(aux->value == e) {
-
+        Node<T> temp = aux->next;
+        aux->value = temp->value;
+        aux->next = temp->next;
+        delete temp;
 			}
     }
-    Node<T> temp = aux->next->next;
-    aux->next = temp;
-    delete temp;
   }
 
   T get(int index) {
@@ -93,9 +96,7 @@ public:
     for (int i = 0; i < index; i++) {
       aux = aux->next;
     }
-    T e = aux->value;
-    delete aux;
-    return e;
+    return aux->value;
   }
 
   bool isEmpty() { return size == 0; }
