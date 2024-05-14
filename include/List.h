@@ -10,8 +10,6 @@ private:
   Node<T> *head, *tail;
   int size;
 
-  bool validIndex(int index) { return -1 < index && index < size; }
-
 public:
   List() {
     head = new Node<T>();
@@ -30,6 +28,10 @@ public:
     delete tail;
     delete head;
   }  
+
+  bool validIndex(int index) { 
+    return (-1 < index && index < size); 
+  }
 
   void add(T e) {
     tail->value = e;
@@ -60,14 +62,14 @@ public:
     size++;
   }
 
-  void remove(int index) {
-    if (!validIndex())
+  void removeIndex(int index) {
+    if (!validIndex(index))
       throw std::out_of_range("Index out of bounds");
     Node<T> *aux = head;
     for (int i = 0; i < index; ++i) {
       aux = aux->next;
     }
-    Node<T> temp = aux->next;
+    Node<T> *temp = aux->next;
     aux->next = temp->next;
     delete temp;
   }
@@ -75,16 +77,17 @@ public:
 
   // Removes the element that matches with 'e'.
   void remove(T e) {
-    if (!validIndex())
+    if (isEmpty())
       throw std::out_of_range("Index out of bounds");
     Node<T> *aux = head;
     for (int i = 0; i < size; ++i) {
       aux = aux->next;
 			if(aux->value == e) {
-        Node<T> temp = aux->next;
+        Node<T> *temp = aux->next;
         aux->value = temp->value;
         aux->next = temp->next;
         delete temp;
+        return;
 			}
     }
   }
