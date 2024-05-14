@@ -8,38 +8,47 @@
 template <typename T>
 class Stack {
 	private:
-		Node<T> *head, *tail;
+		Node<T> *top, *bottom;
 
 	public:
 		Stack() {
-			head = new Node<T>();
-			tail = new Node<T>();
-			head->next = tail;
-			head->value = 0;
-			tail->value = 0;
-			tail->next = tail;
+			top = new Node<T>();
+			bottom = new Node<T>();
+			top->next = bottom;
 		}
 
 		void push(T e) {
 			Node<T> *temp = new Node<T>();
 			temp->value = e;
-			temp->next = head->next;
-			head->next = temp;
-			delete temp;
+			temp->next = top->next;
+			top->next = temp;
 		}
 
 		T pop() {
 			if(isEmpty())
 				throw std::out_of_range("Stack is empty, T pop()");
-			Node<T> *temp = head->next;
-			head->next = temp->next;
+			Node<T> *temp = top->next;
+			top->next = temp->next;
 			T e = temp->value;
 			delete temp;
 			return e;
 		}
 
 		bool isEmpty() {
-			return head->next == tail;
+			return top->next == bottom;
+		}
+
+		~Stack() {
+			Node<T> *aux;
+			while(!isEmpty()) {
+				while(!isEmpty()) {
+				aux = top->next;
+				top->next = aux->next;
+				delete aux;
+			}
+			delete top;
+			delete bottom;
+			}
 		}
 };
 
