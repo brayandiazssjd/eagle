@@ -15,7 +15,7 @@ void print(Stack<T> *s) {
 	while (!s->isEmpty()) {
 		std::cout<<s->pop()<<" ";
 	}
-}
+} 
 
 int main (int argc, char *argv[]) {
 	List<int> l;
