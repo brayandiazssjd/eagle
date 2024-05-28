@@ -1,17 +1,4 @@
-#include <string>
-
-class Topic{
-    private:
-        std::string name;
-        int id;
-
-    public:
-        Topic();
-        Topic(std::string name, int id);
-        std::string getName();
-        int getId();
-        ~Topic();
-};
+#include "Topic.h"
 
 Topic::Topic(){
 }
