@@ -1,19 +1,4 @@
-#include "Grade.cpp"
-
-class Student
-{
-private:
-    std::string name;
-    long id;
-    Grade *grades;
-public:
-    Student();
-    Student(std::string name, long id, Grade *grades);
-    std::string getName();
-    long getId();
-    Grade *getGrades();
-    ~Student();
-};
+#include "Student.h"
 
 Student::Student(){
 }
