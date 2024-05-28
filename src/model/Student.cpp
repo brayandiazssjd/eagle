@@ -1,4 +1,4 @@
-#include "Grade.h"
+#include "Grade.cpp"
 
 class Student
 {

@@ -1,33 +1,33 @@
 #include <string>
 
-class Class{
+class ClassA{
     private:
         std::string id;
         int professorId;
 
     public:
-        Class();
-        Class(std::string id, int professorId);
+        ClassA();
+        ClassA(std::string id, int professorId);
         std::string getId();
         int getProfessorId();
-        ~Class();
+        ~ClassA();
 };
 
-Class::Class(){
+ClassA::ClassA(){
 }
 
-Class::Class(std::string id, int professorId){
+ClassA::ClassA(std::string id, int professorId){
     this->id = id;
     this->professorId = professorId;
 }
 
-std::string Class::getId(){
+std::string ClassA::getId(){
     return id;
 }
 
-int Class::getProfessorId(){
+int ClassA::getProfessorId(){
     return professorId;
 }
 
-Class::~Class(){
+ClassA::~ClassA(){
 }

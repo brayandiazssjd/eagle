@@ -1,5 +1,5 @@
 #include <string>
-#include "Point.h"
+#include "Point.cpp"
 
 class Grade{
 	private:
