@@ -23,6 +23,7 @@ public:
   void setLastNames(std::string lastNames);
   int getId();
   void setId(int id);
+  std::string toString();
 };
 
 #endif // PROFESSOR_H

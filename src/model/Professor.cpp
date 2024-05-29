@@ -27,3 +27,7 @@ void Professor::setId(int id) {
 }
 
 Professor::~Professor() {}
+
+std::string Professor::toString() {
+    return "ID: " + std::to_string(id) + ", Nombres: " + names + ", Apellidos: " + lastNames;
+}
