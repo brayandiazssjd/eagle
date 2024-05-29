@@ -1,31 +1,29 @@
-#include <string>
-class Professor {
-private:
-  std::string names, lastNames;
-  long id;
-  int classesNumber;
+#include "Professor.h"
 
-public:
-  Professor();
-  Professor(Professor &&) = default;
-  Professor(const Professor &) = default;
-  Professor &operator=(Professor &&) = default;
-  Professor &operator=(const Professor &) = default;
-  ~Professor();
+Professor::Professor() {}
 
-  std::string getNames() { return names; }
+std::string Professor::getNames() { 
+  return names; 
+}
 
-  void setNames(std::string names) { this->names = names; }
+void Professor::setNames(std::string names) { 
+  this->names = names; 
+}
 
-  std::string getLastNames() { return lastNames; }
+std::string Professor::getLastNames() { 
+  return lastNames; 
+}
 
-  void setLastNames(std::string lastNames) { this->lastNames = lastNames; }
+void Professor::setLastNames(std::string lastNames) { 
+  this->lastNames = lastNames; 
+}
 
-  int getId() { return id; }
+int Professor::getId() { 
+  return id; 
+}
 
-  void setId(int id) { this->id = id; }
-};
+void Professor::setId(int id) { 
+  this->id = id; 
+}
 
-Professor ::Professor() {}
-
-Professor ::~Professor() {}
+Professor::~Professor() {}
