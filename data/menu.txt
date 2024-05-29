@@ -8,7 +8,7 @@ Sub menú 1
 1.2 Profesores con 'n' número de clases con id de menor a mayor
 1.3 Promedios de los estudiates con el profesor 'p'
 1.4 Estudiantes en un curso 'c'.
-1.5 Lista de estudinates con una nota superior a 'n' en un tema 't' 
+1.5 Lista de estudinates con una nota superior a 'n' en un tema 't'
 
 Sub menú 2
 2.1 Esquema de calificación que aún no se haya ejecutado
