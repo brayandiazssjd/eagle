@@ -1,4 +1,4 @@
-#include "Topic.h"
+#include "../../include/Topic.h"
 
 Topic::Topic(){
 }

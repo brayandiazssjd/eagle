@@ -1,4 +1,4 @@
-#include "Grade.h"
+#include "../../include/Grade.h"
 
 Grade::Grade(){
 }
