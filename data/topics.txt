@@ -1,0 +1,10 @@
+1,Tipos de algoritmos
+2,Algoritmos de ordenamiento
+3,Algoritmos de búsqueda
+4,Análisis de complejidad
+5,Listas
+6,Pilas
+7,Colas
+8,Multilistas
+9,Árboles binarios
+10,Árboles n-arios

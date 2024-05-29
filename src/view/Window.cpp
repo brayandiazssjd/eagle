@@ -1,4 +1,5 @@
 #include "../../include/Window.h"
+#include <iostream>
 /*Window::Window(Listener l) {
                 this.l = l;
         }

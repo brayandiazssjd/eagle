@@ -1,7 +1,8 @@
 #ifndef WINDOW_H
 #define WINDOW_H
 
-#include <iostream>
+#include <string>
+
 class Window {
 private:
   
