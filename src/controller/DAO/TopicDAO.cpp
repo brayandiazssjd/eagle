@@ -1,4 +1,4 @@
-//#include "../../../include/TopicDAO.h"
+#include "../../../include/TopicDAO.h"
 #include <iostream>
 #include <string>
 #include <fstream>

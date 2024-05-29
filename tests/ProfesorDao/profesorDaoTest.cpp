@@ -1,10 +1,12 @@
 #include <iostream>
+#include <string>
 #include "../../include/ProfessorDAO.h"
 
 int main() {
     // Crea un objeto ProfessorDAO que interactúa con un archivo específico
-    ProfessorDAO dao("datosTest.txt");
-
+    std::string path = "datosTest.txt";
+    ProfessorDAO dao(path);
+	std::cout << "Nombre: ";
     // Obtiene los profesores del archivo
     Queue<Professor> professors = dao.getProfessors();
 

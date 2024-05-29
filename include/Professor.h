@@ -11,10 +11,6 @@ private:
 
 public:
   Professor();
-  Professor(Professor &&) = default;
-  Professor(const Professor &) = default;
-  Professor &operator=(Professor &&) = default;
-  Professor &operator=(const Professor &) = default;
   ~Professor();
 
   std::string getNames();

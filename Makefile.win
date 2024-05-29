@@ -1,11 +1,11 @@
 # Project: eagle
 # Makefile created by Dev-C++ 5.11
 
-CPP      = g++.exe
-CC       = gcc.exe
+CPP      = x86_64-w64-mingw32-g++.exe
+CC       = x86_64-w64-mingw32-gcc.exe
 WINDRES  = windres.exe
-OBJ      = build/main.o build/FileManager.o
-LINKOBJ  = build/main.o build/FileManager.o
+OBJ      = build/FileManager.o build/File.o build/Grade.o build/Point.o build/Professor.o build/Student.o build/Topic.o build/App.o build/ProfessorController.o build/StudentController.o build/ProfessorDAO.o build/StudentDAO.o build/TopicDAO.o build/profesorDaoTest.o
+LINKOBJ  = build/FileManager.o build/File.o build/Grade.o build/Point.o build/Professor.o build/Student.o build/Topic.o build/App.o build/ProfessorController.o build/StudentController.o build/ProfessorDAO.o build/StudentDAO.o build/TopicDAO.o build/profesorDaoTest.o
 LIBS     = -L"C:/Users/JyL/Desktop/ciencias de la computacion/Dev-Cpp/MinGW64/lib" -L"C:/Users/JyL/Desktop/ciencias de la computacion/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -L"lib"
 INCS     = -I"C:/Users/JyL/Desktop/ciencias de la computacion/Dev-Cpp/MinGW64/include" -I"C:/Users/JyL/Desktop/ciencias de la computacion/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Users/JyL/Desktop/ciencias de la computacion/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"include"
 CXXINCS  = -I"C:/Users/JyL/Desktop/ciencias de la computacion/Dev-Cpp/MinGW64/include" -I"C:/Users/JyL/Desktop/ciencias de la computacion/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Users/JyL/Desktop/ciencias de la computacion/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Users/JyL/Desktop/ciencias de la computacion/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++" -I"include"
@@ -24,8 +24,44 @@ clean: clean-custom
 $(BIN): $(OBJ)
 	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
 
-build/main.o: src/controller/main.cpp
-	$(CPP) -c src/controller/main.cpp -o build/main.o $(CXXFLAGS)
-
 build/FileManager.o: src/controller/FileManager.cpp
 	$(CPP) -c src/controller/FileManager.cpp -o build/FileManager.o $(CXXFLAGS)
+
+build/File.o: src/model/File.cpp
+	$(CPP) -c src/model/File.cpp -o build/File.o $(CXXFLAGS)
+
+build/Grade.o: src/model/Grade.cpp
+	$(CPP) -c src/model/Grade.cpp -o build/Grade.o $(CXXFLAGS)
+
+build/Point.o: src/model/Point.cpp
+	$(CPP) -c src/model/Point.cpp -o build/Point.o $(CXXFLAGS)
+
+build/Professor.o: src/model/Professor.cpp
+	$(CPP) -c src/model/Professor.cpp -o build/Professor.o $(CXXFLAGS)
+
+build/Student.o: src/model/Student.cpp
+	$(CPP) -c src/model/Student.cpp -o build/Student.o $(CXXFLAGS)
+
+build/Topic.o: src/model/Topic.cpp
+	$(CPP) -c src/model/Topic.cpp -o build/Topic.o $(CXXFLAGS)
+
+build/App.o: src/controller/App.cpp
+	$(CPP) -c src/controller/App.cpp -o build/App.o $(CXXFLAGS)
+
+build/ProfessorController.o: src/controller/ProfessorController.cpp
+	$(CPP) -c src/controller/ProfessorController.cpp -o build/ProfessorController.o $(CXXFLAGS)
+
+build/StudentController.o: src/controller/StudentController.cpp
+	$(CPP) -c src/controller/StudentController.cpp -o build/StudentController.o $(CXXFLAGS)
+
+build/ProfessorDAO.o: src/controller/DAO/ProfessorDAO.cpp
+	$(CPP) -c src/controller/DAO/ProfessorDAO.cpp -o build/ProfessorDAO.o $(CXXFLAGS)
+
+build/StudentDAO.o: src/controller/DAO/StudentDAO.cpp
+	$(CPP) -c src/controller/DAO/StudentDAO.cpp -o build/StudentDAO.o $(CXXFLAGS)
+
+build/TopicDAO.o: src/controller/DAO/TopicDAO.cpp
+	$(CPP) -c src/controller/DAO/TopicDAO.cpp -o build/TopicDAO.o $(CXXFLAGS)
+
+build/profesorDaoTest.o: tests/ProfesorDao/profesorDaoTest.cpp
+	$(CPP) -c tests/ProfesorDao/profesorDaoTest.cpp -o build/profesorDaoTest.o $(CXXFLAGS)

@@ -9,7 +9,7 @@ void print(List<T> l) {
 }
 int main(int argc, char const *argv[]) {
 	List<int> l;
-	int input;
+	int input=0;
 	std::cin>>input;
 	l.add(input);
 	print(l);
@@ -17,6 +17,7 @@ int main(int argc, char const *argv[]) {
 		std::cin>>input;
 		l.add(input);
 		print(l);
+		std::cout<<std::endl;
 	}
 
 	return 0;
