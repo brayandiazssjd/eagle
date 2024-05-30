@@ -5,7 +5,7 @@
 
 template <typename T>
 void print(List<T> l) {
-	for (int i = 0; i < l.length(); i++) {
+	for (int i = 0; i < l.length()-1; i++) {
 		std::cout<<l.get(i)<<" ";
 	}
  }
@@ -19,15 +19,15 @@ void print(Stack<T> *s) {
 
 int main (int argc, char *argv[]) {
 	List<int> l;
-	Stack<int> *s = new Stack<int>();
-	s->push(3);
-	s->push(2);
-	s->push(1);
-	print(s);
-
-//	l.add(1);
-//	l.add(2);
-//	l.add(3);
-//	print(l);
+  
+  int input = 0;
+  std::cin>>input;
+  while(input != 0) {
+    l.add(input);
+    for(int i = 0; i < l.length(); i++)
+      std::cout<<" "<<l.get(i);
+    std::cout<<std::endl;
+    std::cin>>input;
+  }
 	return 0;
 }

@@ -10,8 +10,11 @@ class TopicDAO {
 public:
   Queue<Topic> getAll();
   void save(Queue<Topic> q);
+  TopicDAO(std::string filePath);
+  TopicDAO();
+  void setPath(std::string filePath);
 private:
-  std::string path;
+  std::string filePath;
 };
 
 #endif // !TOPICDAO_H

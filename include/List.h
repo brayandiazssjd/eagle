@@ -3,6 +3,7 @@
 
 #include "Node.h"
 #include <cstddef>
+#include <iostream>
 #include <stdexcept>
 
 template <typename T> class List {
@@ -105,6 +106,14 @@ public:
   bool isEmpty() { return size == 0; }
 
   int length() { return size; }
+
+  void toString() {
+    Node<T> *aux = head->next;
+    for (int i = 0; i < length(); i++) {
+      std::cout<<" "<<aux->value;
+      aux = aux->next;
+    }
+  }
 };
 
 #endif

@@ -1,6 +1,7 @@
 #include "../include/List.h"
 #include "../include/Stack.h"
 #include "../include/Topic.h"
+#include "../include/TopicDAO.h"
 #include <iostream>
 
 template <typename T>
@@ -18,21 +19,13 @@ void print(Stack<T> *s) {
 } 
 
 int main (int argc, char *argv[]) {
-	/*List<int> l;
-	Stack<int> *s = new Stack<int>();
-	s->push(3);
-	s->push(2);
-	s->push(1);
-	print(s);*/
-
 	Topic t;
-	t.setId(5);
+	t.setId(10);
 	t.setName("brayan");
-	std::cout<<t.getId();
+	std::cout<<t.getName();
 
-//	l.add(1);
-//	l.add(2);
-//	l.add(3);
-//	print(l);
+	TopicDAO dao;
+	Queue<Topic> q = dao.getAll();
+	std::cout<<q.denqueue().getName();
 	return 0;
 }
