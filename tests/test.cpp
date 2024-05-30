@@ -1,6 +1,6 @@
-#include "List.h"
-#include "Stack.h"
-
+#include "../include/List.h"
+#include "../include/Stack.h"
+#include "../include/Topic.h"
 #include <iostream>
 
 template <typename T>
@@ -18,12 +18,17 @@ void print(Stack<T> *s) {
 } 
 
 int main (int argc, char *argv[]) {
-	List<int> l;
+	/*List<int> l;
 	Stack<int> *s = new Stack<int>();
 	s->push(3);
 	s->push(2);
 	s->push(1);
-	print(s);
+	print(s);*/
+
+	Topic t;
+	t.setId(5);
+	t.setName("brayan");
+	std::cout<<t.getId();
 
 //	l.add(1);
 //	l.add(2);

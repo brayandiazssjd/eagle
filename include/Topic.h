@@ -13,6 +13,8 @@ class Topic{
         Topic(std::string name, int id);
         std::string getName();
         int getId();
+        void setName(std::string _name);
+        void setId(int _id);
         ~Topic();
 };
 
