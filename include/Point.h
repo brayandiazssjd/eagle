@@ -12,7 +12,7 @@ public:
   Point();
   Point(std::string topic, float percentage);
   std::string getTopic();
-  int getPercentage();
+  float getPercentage();
   ~Point();
 };
 
