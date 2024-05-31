@@ -18,7 +18,7 @@ float Grade::getPercentage(){
 }
 
 Point getPoint(){
-	return point;
+	return points;
 }
 
 Grade::~Grade(){
