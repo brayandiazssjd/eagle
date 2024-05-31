@@ -83,4 +83,54 @@ public:
     void studentsWithGradeAbove(float grade, std::string topic) {
         // Implementación para listar estudiantes con nota superior en un tema específico
     }
+    
+	void generatePartialFiles() {
+	    std::map<int, std::vector<float>> partialScores;
+	    std::map<int, int> questionCount;
+	
+	    Queue<Student*>* tempQueue = studentDAO->getStudents();
+	    while (!tempQueue->isEmpty()) {
+	        Student* student = tempQueue->denqueue();
+	        std::vector<Grade*> grades = student->getGrades();
+	        int parcial = 1;
+	        for (size_t i = 0; i < grades.size(); ++i) {
+	            if ((i % 10 == 0) && (i != 0)) {
+	                parcial++;
+	            }
+	            partialScores[parcial].push_back(grades[i]->getPoint()->getPercentage());
+	            questionCount[parcial] = 10;
+	        }
+	        delete student;
+	    }
+	    delete tempQueue;
+	
+	    for (const auto& entry : partialScores) {
+	        int parcial = entry.first;
+	        const std::vector<float>& scores = entry.second;
+	        std::string fileName = "Parcial" + std::to_string(parcial) + ".txt";
+	        File outFile(fileName);
+	
+	        std::vector<std::string> lines;
+	
+	        for (int question = 1; question <= questionCount[parcial]; ++question) {
+	            float sum = 0;
+	            int count = 0;
+	            for (size_t i = question - 1; i < scores.size(); i += 10) {
+	                sum += scores[i];
+	                count++;
+	            }
+	            float average = (count > 0) ? sum / count : 0;
+	
+	            std::ostringstream oss;
+	            oss << "Pregunta " << question << ": " << average;
+	            lines.push_back(oss.str());
+	        }
+	
+	        outFile.writeLines(lines);
+	        std::cout << "Archivo " << fileName << " generado." << std::endl;
+	    }
+	}
+
+
+    
 };

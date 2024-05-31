@@ -101,6 +101,16 @@ public:
             outFile.close();
         }
     }
+    
+    void writeLines(const std::vector<std::string>& lines) {
+        std::ofstream file(path);
+        if (file.is_open()) {
+            for (const auto& line : lines) {
+                file << line << std::endl;
+            }
+            file.close();
+        }
+    }
 
 };
 

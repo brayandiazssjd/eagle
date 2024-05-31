@@ -16,7 +16,7 @@ private:
 public:
     Student();
     Student(std::string name, long id, std::vector<Grade*> grades);
-    Student(std::string name, long id, std::vector<Grade*> grades, std::string group);
+    //Student(std::string name, long id, std::vector<Grade*> grades, std::string group);
 
     std::string getName();
     long getId();

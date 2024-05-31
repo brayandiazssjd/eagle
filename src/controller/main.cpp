@@ -7,7 +7,8 @@ void displayMenu() {
     std::cout << "3. Promedio por tema de todos los estudiantes de un profesor" << std::endl;
     std::cout << "4. Lista de profesores por número de clases" << std::endl;
     std::cout << "5. Estudiantes con nota superior en un tema" << std::endl;
-    std::cout << "6. Salir" << std::endl;
+    std::cout << "6. General ParcialXX.bin" << std::endl;
+    std::cout << "7. Salir" << std::endl;
     std::cout << "Seleccione una opción: ";
 }
 
@@ -65,7 +66,11 @@ int main(int argc, char** argv) {
                 controller.studentsWithGradeAbove(grade, topic);
                 break;
             }
-            case 6:
+            case 6: {
+				controller.generatePartialFiles();
+                break;
+            }
+            case 7:
                 std::cout << "Saliendo..." << std::endl;
                 break;
             default:
