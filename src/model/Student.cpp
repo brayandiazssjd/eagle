@@ -29,7 +29,7 @@ void Student::setId(long id) {
     this->id = id;
 }
 
-std::vector<Grade*> getGrades()
+std::vector<Grade*> Student::getGrades()
 {
     return grades;
 }

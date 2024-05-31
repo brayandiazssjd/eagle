@@ -15,7 +15,7 @@ class Grade{
         Grade(std::string name, float percentage, Point *points);
         std::string getName();
         float getPercentage();
-        Point getPoint();
+        Point* getPoint();
         ~Grade();
 };
 
