@@ -26,7 +26,7 @@ void Student::setName(const std::string& name) {
     this->name = name;
 }
 
-long Student::getId()
+int Student::getId()
 {
     return id;
 }

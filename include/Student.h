@@ -19,7 +19,7 @@ public:
     //Student(std::string name, long id, std::vector<Grade*> grades, std::string group);
 
     std::string getName();
-    long getId();
+    int getId();
     std::vector<Grade*> getGrades();
     std::string getGroup();
     void setName(const std::string& name);

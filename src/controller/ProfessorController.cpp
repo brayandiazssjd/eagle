@@ -1,11 +1,4 @@
-<<<<<<< HEAD
-class ProfessorController {
-private:
-	//OList<Professor> list;
-public:
-=======
 #include "../../include/ProfessorController.h"
->>>>>>> 2c13d1c89010d6b1265760f20dc6c0dfa1b16d8d
 
 // Constructor
 ProfessorController::ProfessorController() {

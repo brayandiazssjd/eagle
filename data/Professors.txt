@@ -3,3 +3,4 @@
 45678901 Maria Rodriguez 2
 56789012 Carlos Garcia 2
 67890123 Ana Lopez 2
+10 alfredo vargas 3
