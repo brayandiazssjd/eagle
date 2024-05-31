@@ -3,11 +3,12 @@
 Student::Student(){
 }
 
-Student::Student(std::string name, long id, Grade *grades)
+Student::Student(std::string name, long id ,std::vector<Grade*> grades)
 {
     this->name = name;
     this->id = id;
     this->grades = grades;
+    //this->course = course;
 }
 
 std::string Student::getName()
@@ -28,15 +29,24 @@ void Student::setId(long id) {
     this->id = id;
 }
 
-Grade *Student::getGrades()
+std::vector<Grade*> getGrades()
 {
-    return grades;
+    return grades[];
 }
 
-void Student::setGrades(Grade* grades) {
+void Student::setGrades(std::vector<Grade*> grades) {
     this->grades = grades;
 }
 
+/*
+std::string getCourse(){
+	return course;
+}
+
+void setCourse(const std::string& course){
+	this->course = course;
+}
+*/
 Student::~Student()
 {
 }

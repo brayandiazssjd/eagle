@@ -9,16 +9,19 @@ class Student
 private:
     std::string name;
     long id;
-    Grade *grades;
+    //std::string course;
+    std::vector<Grade*> grades;
 public:
     Student();
-    Student(std::string name, long id, Grade *grades);
+    Student(std::string name, long id, std::vector<Grade*> grades);
     std::string getName();
     long getId();
-    Grade *getGrades();
+    std::vector<Grade*> getGrades();
+    //std::string getCourse();
     void setName(const std::string& name);
-void setId(long id);
-void setGrades(Grade* grades);
+	void setId(long id);
+	void setGrades(std::vector<Grade*> grades);
+	//void setCourse(const std::string& course);
     ~Student();
 };
 

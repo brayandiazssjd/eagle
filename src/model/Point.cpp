@@ -3,7 +3,7 @@
 Point::Point() {
 }
 
-Point::Point(std::string topic, int percentage) {
+Point::Point(std::string topic, float percentage) {
   this->topic = topic;
   this->percentage = percentage;
 }
@@ -12,7 +12,7 @@ std::string Point::getTopic() {
   return topic;
 }
 
-int Point::getPercentage() {
+float Point::getPercentage() {
   return percentage;
 }
 

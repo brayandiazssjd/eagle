@@ -7,14 +7,15 @@
 class Grade{
     private:
         std::string name;
-        int percentage;			
+        float percentage;
+		Point *points;			
     
     public:		
-        Point *points;
         Grade();
-        Grade(std::string name, int percentage, Point *points);
+        Grade(std::string name, float percentage, Point *points);
         std::string getName();
         int getPercentage();
+        Point getPoint();
         ~Grade();
 };
 

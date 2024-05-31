@@ -6,11 +6,11 @@
 class Point {
 private:
   std::string topic;
-  int percentage;
+  float percentage;
 
 public:
   Point();
-  Point(std::string topic, int percentage);
+  Point(std::string topic, float percentage);
   std::string getTopic();
   int getPercentage();
   ~Point();
