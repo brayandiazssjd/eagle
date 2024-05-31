@@ -1,8 +1,8 @@
 # Project: eagle
 # Makefile created by Dev-C++ 5.11
 
-CPP      = x86_64-w64-mingw32-g++.exe
-CC       = x86_64-w64-mingw32-gcc.exe
+CPP      = g++.exe
+CC       = gcc.exe
 WINDRES  = windres.exe
 OBJ      = build/FileManager.o build/File.o build/Professor.o build/App.o build/ProfessorController.o build/StudentController.o build/testProfesorDao.o
 LINKOBJ  = build/FileManager.o build/File.o build/Professor.o build/App.o build/ProfessorController.o build/StudentController.o build/testProfesorDao.o

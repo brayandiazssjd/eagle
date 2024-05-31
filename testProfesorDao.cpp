@@ -1,24 +1,32 @@
-#include "ProfessorDAO.h"
+#include <DLOList.h>
+#include "ProfessorController.h"
 
-int main() {
+int main()
+{
     // Crear un objeto ProfessorDAO para un archivo de prueba
     ProfessorDAO dao("../data/Professors.txt");
+    DLOList<Professor *> *professorsList = new DLOList<Professor *>();
+    // Crear un objeto ProfessorController
+    ProfessorController controller;
 
     // Crear algunos profesores y escribirlos en el archivo
-    Professor* prof1 = new Professor();
-    prof1->setNames("John");
-    prof1->setLastNames("Doe");
-    prof1->setId(79562930);
-    prof1->setClassesNumber(2);
-    dao.writeProfessor(prof1);
-    
+    Professor *prof1;
+DLOList<int>* idsList = controller.getIdsProfessors();
+    for (int i = 0; i < idsList->length(); i++)
+{
+    int id = idsList->get(i);
+    std::cout << "ID: " << id << std::endl;
+}
     // Leer los profesores del archivo y mostrar sus nombres e ID
-    Queue<Professor*>* professors = dao.getProfessors();
-    while (!professors->isEmpty()) {
-        Professor* prof = professors->denqueue();
+    DLOList<Professor *> *professors = controller.getProfessors(); // Usa el método getProfessors de ProfessorController
+    for (int i = 0; i < professors->length(); i++)
+    {
+        Professor *prof = professors->get(i);
         std::cout << "ID: " << prof->getId() << ", Name: " << prof->getNames() << " " << prof->getLastNames() << std::endl;
-        delete prof;
     }
+    prof1 = controller.getProfessor(56789012);
+    std::cout<<prof1->getId()<<" "<<prof1->getNames();
+    
 
     delete professors;
     delete prof1;

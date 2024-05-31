@@ -93,38 +93,7 @@ public:
     size--;
   }
 
-  // TODO
-  // Elimina el elemento en la pasición 'index'.
-  void remove(int index);
-
   int length() { return size; }
-  
-	/*
-  std::string toString() {
-      if (size == 0) {
-    return "List []";
-  }
-
-    std::string str = "List [";
-    DLNode<T> *aux = head->next;
-    for (int i = 0; i < size - 1; i++) {
-      str += std::to_string(aux->value) + ", "; // para números
-      // str += aux->value + ", ";
-      aux = aux->next;
-    }
-    // str += aux->value;
-    str += std::to_string(aux->value); // para números
-    delete aux;
-    return str + "]";
-  }
-
-  void print() {
-    DLNode<T> *t = head->next;
-    for (int i = 0; i < size; i++) {
-      std::cout << t->value;
-      t = t->next;
-    }
-  }*/
 };
 
 #endif

@@ -21,7 +21,8 @@ public:
   void setId(int id);
   std::string toString();
   int getClassesNumber();
-  int setClassesNumber(int classesNumber);
+  void setClassesNumber(int classesNumber);
+  
 };
 
 #endif // PROFESSOR_H
