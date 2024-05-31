@@ -21,7 +21,8 @@ class ProfessorDAO : public File{
                 Professor *professor = new Professor();
                 professor->setNames(info[1]);
                 professor->setLastNames(info[2]);
-                professor->setId(stol(info[0]));
+                professor->setId(stoi(info[0]));
+                professor->setClassesNumber(stoi(info[3]));
                 return professor;	
             }else{
                 return nullptr;
@@ -42,7 +43,7 @@ class ProfessorDAO : public File{
         }
        void writeProfessor(Professor* prof) {
     std::ostringstream oss;
-    oss << prof->getId() << " " << prof->getNames() << " " << prof->getLastNames();
+    oss << prof->getId() << " " << prof->getNames() << " " << prof->getLastNames() << " " << prof->getClassesNumber();
     std::ofstream file("test.txt", std::ios::app);
     if (file.is_open()) {
         file << oss.str() << "\n";

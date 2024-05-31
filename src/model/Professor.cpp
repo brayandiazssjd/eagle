@@ -26,6 +26,14 @@ void Professor::setId(int id) {
   this->id = id; 
 }
 
+int Professor::getClassesNumber() { 
+  return classesNumber; 
+}
+
+int Professor::setClassesNumber(int classesNumber) { 
+  this->classesNumber = classesNumber; 
+}
+
 Professor::~Professor() {}
 
 std::string Professor::toString() {
