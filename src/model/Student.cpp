@@ -31,7 +31,7 @@ void Student::setId(long id) {
 
 std::vector<Grade*> getGrades()
 {
-    return grades[];
+    return grades;
 }
 
 void Student::setGrades(std::vector<Grade*> grades) {
