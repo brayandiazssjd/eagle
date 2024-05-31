@@ -1,18 +1,52 @@
-#ifndef PROFESSOR_DAO_H
-#define PROFESSOR_DAO_H
-
+#include <fstream>
+#include <sstream>
+#include <string>
 #include <vector>
-#include "file.h"
+#include <iostream>
+#include "File.h"
 #include "Professor.h"
 #include "Queue.h"
 
-class ProfessorDAO : public File {
-private:
-    int count = 5;
-public:
-    ProfessorDAO(const std::string& _path);
-    Professor createProfessor(int line);
-    Queue<Professor> getProfessors();
+class ProfessorDAO : public File{
+    private:
+        int count = 0;
+        
+    public:
+        ProfessorDAO(const std::string& _path) : File(_path){
+        }
+        
+        Professor* createProfessor(int line){
+            std::vector<std::string> info = readDataFromLine<std::string>(line);
+            if(!info.empty()){
+                Professor *professor = new Professor();
+                professor->setNames(info[1]);
+                professor->setLastNames(info[2]);
+                professor->setId(stol(info[0]));
+                return professor;	
+            }else{
+                return nullptr;
+            }	
+        }
+        
+        Queue<Professor*>* getProfessors() {
+        	count=1;
+            Queue<Professor*>* profQ = new Queue<Professor*>;
+            Professor* professor = createProfessor(count);
+            count++;
+            while(professor != nullptr){
+            	profQ->enqueue(professor);
+            	professor = createProfessor(count);
+            	count++;
+            }
+            return profQ;
+        }
+       void writeProfessor(Professor* prof) {
+    std::ostringstream oss;
+    oss << prof->getId() << " " << prof->getNames() << " " << prof->getLastNames();
+    std::ofstream file("test.txt", std::ios::app);
+    if (file.is_open()) {
+        file << oss.str() << "\n";
+        file.close();
+    }
+}
 };
-
-#endif // PROFESSOR_DAO_H
