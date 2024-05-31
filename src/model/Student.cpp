@@ -1,15 +1,21 @@
 #include "../../include/Student.h"
 
-Student::Student(){
-}
+Student::Student() {}
 
-Student::Student(std::string name, long id ,std::vector<Grade*> grades)
+Student::Student(std::string name, long id, std::vector<Grade*> grades)
 {
     this->name = name;
     this->id = id;
     this->grades = grades;
-    //this->course = course;
 }
+
+/*Student::Student(std::string name, long id, std::vector<Grade*> grades, std::string course)
+{
+    this->name = name;
+    this->id = id;
+    this->grades = grades;
+    this->course = course;
+}*/
 
 std::string Student::getName()
 {
@@ -34,19 +40,17 @@ std::vector<Grade*> Student::getGrades()
     return grades;
 }
 
+/*std::string Student::getGroup() {
+    return course;
+}*/
+
 void Student::setGrades(std::vector<Grade*> grades) {
     this->grades = grades;
 }
 
-/*
-std::string getCourse(){
-	return course;
-}
+/*void Student::setGroup(const std::string& course) {
+    this->course = course;
+}*/
 
-void setCourse(const std::string& course){
-	this->course = course;
-}
-*/
-Student::~Student()
-{
-}
+Student::~Student() {}
+

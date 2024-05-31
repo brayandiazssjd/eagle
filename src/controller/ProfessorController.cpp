@@ -1,6 +1,6 @@
 class ProfessorController {
 private:
-	OList<Professor> list;
+	//OList<Professor> list;
 public:
 
 };
