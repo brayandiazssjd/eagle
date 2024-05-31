@@ -1,0 +1,5 @@
+1234567890 AC80 BD82 AC80_primer_parcial.txt AC80_segundo_parcial.txt AC80_tercer_parcial.txt BD82_primer_parcial.txt BD82_segundo_parcial.txt BD82_tercer_parcial.txt
+2345678901 CG81 DS90 CG81_primer_parcial.txt CG81_segundo_parcial.txt CG81_tercer_parcial.txt DS80_primer_parcial.txt DS80_segundo_parcial.txt DS80_tercer_parcial.txt
+3456789012 ED81 IA80 ED81_primer_parcial.txt ED81_segundo_parcial.txt ED81_tercer_parcial.txt IA80_primer_parcial.txt IA80_segundo_parcial.txt IA80_tercer_parcial.txt
+4567890123 POO80 RC81 POO80_primer_parcial.txt POO80_segundo_parcial.txt POO80_tercer_parcial.txt RC81_primer_parcial.txt RC81_segundo_parcial.txt RC81_tercer_parcial.txt
+5678901234 SI81 SO82 SI81_primer_parcial.txt SI81_segundo_parcial.txt SI81_tercer_parcial.txt SO82_primer_parcial.txt SO82_segundo_parcial.txt SO82_tercer_parcial.txt
