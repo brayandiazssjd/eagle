@@ -261,7 +261,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit26]
-FileName=main.cpp
+FileName=testProfesorDao.cpp
 CompileCpp=1
 Folder=include
 Compile=1

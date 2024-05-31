@@ -6,7 +6,7 @@
 class Professor {
 private:
   std::string names, lastNames;
-  long id;
+  int id;
   int classesNumber;
 
 public:
@@ -20,6 +20,9 @@ public:
   int getId();
   void setId(int id);
   std::string toString();
+  int getClassesNumber();
+  void setClassesNumber(int classesNumber);
+  
 };
 
 #endif // PROFESSOR_H

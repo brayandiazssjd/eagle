@@ -21,7 +21,7 @@ public:
     std::string getName();
     long getId();
     std::vector<Grade*> getGrades();
-    std::string getCourse();
+    std::string getGroup();
     void setName(const std::string& name);
     void setId(long id);
     void setGrades(std::vector<Grade*> grades);

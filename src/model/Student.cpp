@@ -41,7 +41,7 @@ std::vector<Grade*> Student::getGrades()
 }
 
 /*std::string Student::getGroup() {
-    return course;
+    return group;
 }*/
 
 void Student::setGrades(std::vector<Grade*> grades) {

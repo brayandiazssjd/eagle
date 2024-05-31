@@ -4,8 +4,8 @@
 CPP      = g++.exe
 CC       = gcc.exe
 WINDRES  = windres.exe
-OBJ      = build/FileManager.o build/File.o build/Professor.o build/App.o build/ProfessorController.o build/StudentController.o build/main.o
-LINKOBJ  = build/FileManager.o build/File.o build/Professor.o build/App.o build/ProfessorController.o build/StudentController.o build/main.o
+OBJ      = build/FileManager.o build/File.o build/Professor.o build/App.o build/ProfessorController.o build/StudentController.o build/testProfesorDao.o
+LINKOBJ  = build/FileManager.o build/File.o build/Professor.o build/App.o build/ProfessorController.o build/StudentController.o build/testProfesorDao.o
 LIBS     = -L"C:/Users/JyL/Desktop/ciencias de la computacion/Dev-Cpp/MinGW64/lib" -L"C:/Users/JyL/Desktop/ciencias de la computacion/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -L"lib"
 INCS     = -I"C:/Users/JyL/Desktop/ciencias de la computacion/Dev-Cpp/MinGW64/include" -I"C:/Users/JyL/Desktop/ciencias de la computacion/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Users/JyL/Desktop/ciencias de la computacion/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"include"
 CXXINCS  = -I"C:/Users/JyL/Desktop/ciencias de la computacion/Dev-Cpp/MinGW64/include" -I"C:/Users/JyL/Desktop/ciencias de la computacion/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Users/JyL/Desktop/ciencias de la computacion/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Users/JyL/Desktop/ciencias de la computacion/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++" -I"include"
@@ -42,5 +42,5 @@ build/ProfessorController.o: src/controller/ProfessorController.cpp
 build/StudentController.o: src/controller/StudentController.cpp
 	$(CPP) -c src/controller/StudentController.cpp -o build/StudentController.o $(CXXFLAGS)
 
-build/main.o: main.cpp
-	$(CPP) -c main.cpp -o build/main.o $(CXXFLAGS)
+build/testProfesorDao.o: testProfesorDao.cpp
+	$(CPP) -c testProfesorDao.cpp -o build/testProfesorDao.o $(CXXFLAGS)
