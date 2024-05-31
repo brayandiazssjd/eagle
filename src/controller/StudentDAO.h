@@ -53,7 +53,7 @@ class StudentDAO : public File{
 	        oss << stu->getId() << " " << stu->getName();
 	        std::vector<Grade*> grades = stu->getGrades();
 	        for (Grade* grade : grades) {
-	            oss << " " << grade->getPoint()->getPercentage();
+	            oss << " " << grade->getPoint().getPercentage();
 	        }
 	        writeLine(count, oss.str());
 	        //count++;

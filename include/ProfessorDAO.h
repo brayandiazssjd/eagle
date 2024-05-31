@@ -44,7 +44,7 @@ class ProfessorDAO : public File{
        void writeProfessor(Professor* prof) {
     std::ostringstream oss;
     oss << prof->getId() << " " << prof->getNames() << " " << prof->getLastNames() << " " << prof->getClassesNumber();
-    std::ofstream file("test.txt", std::ios::app);
+    std::ofstream file("../data/Professors.txt", std::ios::app);
     if (file.is_open()) {
         file << oss.str() << "\n";
         file.close();
