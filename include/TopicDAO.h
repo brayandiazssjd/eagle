@@ -3,10 +3,11 @@
 
 #include "Topic.h"
 #include "Queue.h"
+#include "DAO.h"
 #include <string>
 
 
-class TopicDAO {
+class TopicDAO : public DAO<Topic>{
 public:
   Queue<Topic> getAll();
   void save(Queue<Topic> q);

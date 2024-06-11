@@ -1,7 +1,6 @@
 #include "../../../include/TopicDAO.h"
 #include "../../../include/Topic.h"
-#include <fstream>
-#include <iostream>
+#include "../../../include/File.h"
 #include <sstream>
 #include <string>
 void TopicDAO::save(Queue<Topic> q) {
@@ -19,21 +18,28 @@ TopicDAO::TopicDAO(std::string _filepath) {
   filePath = _filepath;
 }
 
+//void TopicDAO::save
+Queue<std::string> getData(std::string line, char s) {
+  std::stringstream ss(line);
+  std::string aux;
+  Queue<std::string> q;
+  while(std::getline(ss, aux, s))
+    q.enqueue(aux);
+  return q;
+} 
+
 Queue<Topic> TopicDAO::getAll() {
-  Queue<Topic> q;
-  std::ifstream infile("../../../data/topics.txt");
-  if (!infile.is_open()) {
-    std::cerr << "Error opening file for reading: topics.txt" << std::endl;
-    return q; // Return empty vector on error
+  File f(path_);
+
+  Queue<Topic> q = f.getAll();
+  int k = q.length();
+  for(int i = 0; i < k; i++) {
+
   }
   std::string line;
-  while (std::getline(infile, line)) {
-    std::stringstream ss(line);
-    std::string id, name;
+  
 
-    std::getline(ss, id, ','); 
-    std::getline(ss, name, ',');
-    q.enqueue(Topic(name, std::stoi(id))); // Create and add Topic object to vector
+    
   }
   infile.close();
   return q;

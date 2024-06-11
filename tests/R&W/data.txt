@@ -1,0 +1,4 @@
+1005485,brayan,0
+12,carlos,0
+23,fenando,1.99
+15,b,0
