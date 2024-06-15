@@ -7,15 +7,11 @@
 #include <string>
 
 
-class TopicDAO : public DAO<Topic>{
+class TopicDAO : public DAO<Topic> {
 public:
-  Queue<Topic> getAll();
-  void save(Queue<Topic> q);
-  TopicDAO(std::string filePath);
-  TopicDAO();
-  void setPath(std::string filePath);
-private:
-  std::string filePath;
+  TopicDAO(std::string path);
+  std::string getData(Topic obj, char s) override;
+  Topic getObject(Queue<std::string> data) override;
 };
 
 #endif // !TOPICDAO_H

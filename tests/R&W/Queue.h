@@ -2,6 +2,7 @@
 #define QUEUE_H
 
 #include "Node.h"
+#include <iostream>
 #include <stdexcept>
 
 template <typename T>
@@ -41,14 +42,22 @@ class Queue {
 		}
 
 		~Queue() {
+			for(int i = 0; i < size; i++) {
+				Node<T> *aux = head;
+				head= aux->next;
+				delete aux;
+			}
+			delete head;
+			delete tail;
+			/*
 			Node<T> *aux;
-			while(!isEmpty()) {
+			for(int i = 0; i < size; i++) {
 				aux = head->next;
 				head->next = aux->next;
 				delete aux;
 			}
 			delete head;
-			delete tail;
+			delete tail; */
 		}
   
     int length() {

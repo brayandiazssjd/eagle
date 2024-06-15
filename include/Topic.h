@@ -3,19 +3,20 @@
 
 #include <string>
 
-class Topic{
-    private:
-        std::string name;
-        int id;
+class Topic {
+public:
+  Topic();
+  Topic(std::string name, int id);
+  std::string getName();
+  int getId();
+  void setName(std::string _name);
+  void setId(int _id);
+  ~Topic();
+  std::string toString();
 
-    public:
-        Topic();
-        Topic(std::string name, int id);
-        std::string getName();
-        int getId();
-        void setName(std::string _name);
-        void setId(int _id);
-        ~Topic();
+private:
+  std::string name;
+  int id;
 };
 
 #endif // TOPIC_H
